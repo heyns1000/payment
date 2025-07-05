@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -237,6 +239,7 @@
             border-radius: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             display: inline-block;
+            text-decoration: none; /* Ensure it looks like a button, not a plain link */
         }
         .mindlift-hero .cta-button:hover {
             background-color: #f0f0f0;
@@ -244,6 +247,26 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
+        /* New button style for linking to master license pricing */
+        .mindlift-hero .secondary-cta-button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+            margin-top: 20px; /* Space between primary and secondary CTA */
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .mindlift-hero .secondary-cta-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
 
         /* Feature Grid Layout */
         .feature-grid {
@@ -480,6 +503,41 @@
             text-decoration: underline; /* Default link underline, can be styled */
             margin-top: 15px; /* Spacing below content */
             word-break: break-all; /* Break long URLs */
+        }
+
+        /* Generic purchase button style */
+        .purchase-button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            background-color: var(--mindlift-color); /* Default purchase button color */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .purchase-button:hover {
+            background-color: var(--mindlift-accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Specific purchase button colors for Pro/Enterprise cards */
+        .pro-card .purchase-button {
+            background-color: var(--pro-button-color);
+        }
+        .pro-card .purchase-button:hover {
+            background-color: var(--pro-button-hover-color);
+        }
+        .enterprise-card .purchase-button {
+            background-color: var(--enterprise-button-color);
+        }
+        .enterprise-card .purchase-button:hover {
+            background-color: var(--enterprise-button-hover-color);
         }
 
 
@@ -1016,6 +1074,10 @@
                 <h1>VaultMesh™ | AgroChain™ Core Protocol</h1>
                 <p>AgroChain™ is a powerful FAA.zone™ framework empowering the Agriculture & Biotech sector with advanced automation and data management. It connects effortlessly to the PulseGrid™ for optimized workflow and compliance.</p>
                 <a href="#pricing" class="cta-button">View Pricing &rarr;</a>
+                <!-- New button linking to master_license_pricing.html -->
+                <a href="payment.faa.zone/master_license_pricing.html" class="secondary-cta-button">
+                    View Master License Pricing
+                </a>
             </div>
         </section>
 
@@ -1186,12 +1248,8 @@
                                 <option value="5">5</option>
                             </select>
                         </div>
-                        <div id="paypal-container-EMWGPGHNN8Y8E"></div>
-                        <script>
-                          paypal.HostedButtons({
-                            hostedButtonId: "EMWGPGHNN8Y8E",
-                          }).render("#paypal-container-EMWGPGHNN8Y8E")
-                        </script>
+                        <!-- Replaced PayPal button with a static purchase button -->
+                        <a href="#" class="purchase-button">Purchase Starter Package</a>
                     </div>
 
                     <div class="pricing-card highlight pro-card">
@@ -1217,12 +1275,8 @@
                                 <option value="5">5</option>
                             </select>
                         </div>
-                        <div id="paypal-container-QGU3ZUQCMD49Q"></div>
-                        <script>
-                          paypal.HostedButtons({
-                            hostedButtonId: "QGU3ZUQCMD49Q",
-                          }).render("#paypal-container-QGU3ZUQCMD49Q")
-                        </script>
+                        <!-- Replaced PayPal button with a static purchase button -->
+                        <a href="#" class="purchase-button">Purchase Pro Package</a>
                     </div>
 
                     <div class="pricing-card enterprise-card">
@@ -1248,12 +1302,8 @@
                                 <option value="5">5</option>
                             </select>
                         </div>
-                        <div id="paypal-container-9C88S44F93M5J"></div>
-                        <script>
-                          paypal.HostedButtons({
-                            hostedButtonId: "9C88S44F93M5J",
-                          }).render("#paypal-container-9C88S44F93M5J")
-                        </script>
+                        <!-- Replaced PayPal button with a static purchase button -->
+                        <a href="#" class="purchase-button">Purchase Enterprise Package</a>
                     </div>
                 </div>
             </div>
@@ -1263,10 +1313,10 @@
         <section class="section-padding ai-help-section">
             <div class="container">
                 <h3 data-lang-key="ai-help-heading"><i class="fas fa-question-circle"></i>AI Help & FAQ Answers</h3>
-                <p class="text-sm mb-4 text-center text-muted-text-dark" data-lang-key="ai-help-slogan">Ask your question about Banimal Loop™ or FAA.zone, and our AI will answer.</p>
+                <p class="text-sm mb-4 text-center text-muted-text-dark" data-lang-key="ai-help-slogan">Ask your question about AgroChain™ or FAA.zone, and our AI will answer.</p>
                 <div class="form-group">
                     <label for="faqPromptInput" class="form-label" data-lang-key="your-question-label">Your Question:</label>
-                    <textarea id="faqPromptInput" class="form-input" rows="4" data-lang-key="faq-placeholder" placeholder="e.g., What is the core protocol of Banimal Loop™?"></textarea>
+                    <textarea id="faqPromptInput" class="form-input" rows="4" data-lang-key="faq-placeholder" placeholder="e.g., What is the core protocol of AgroChain™?"></textarea>
                 </div>
                 <button id="getFaqAnswerBtn" class="checkout-action-button purple mt-4" data-lang-key="get-answer-button">Get Answer ✨</button>
                 <div id="faqLoadingIndicator" class="hidden text-center mt-2 text-blue-400">
